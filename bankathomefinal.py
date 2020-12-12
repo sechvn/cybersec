@@ -1,4 +1,4 @@
-# Eric Gimbel
+# Eric Gimbel Huge thanks goes to my tutor Micheal P. who did a tremendous job of helping how to think and solve problems with code. Also, a huge thanks to Nick G. my brother for encouraging and motivating me with solid advice.
 savings = 1000
 checking = 1000
 
