@@ -1,4 +1,4 @@
-# Eric Gimbel Huge thanks goes to my tutor Micheal P. who did a tremendous job of helping how to think and solve problems with code. Also, a huge thanks to Nick G. my brother for encouraging and motivating me with solid advice.
+# Eric Gimbel -- Huge thanks goes to my tutor Micheal P. who did a tremendous job of helping how to think and solve problems with code. Also, a huge thanks to Nick G. my brother for encouraging and motivating me with solid advice.
 savings = 1000
 checking = 1000
 
@@ -16,9 +16,9 @@ def currentAmount(savings, checking):
 	elif user == 'withdraw':
 		withdrawMoney(savings, checking, account)
 
-	else:		
-		print('Please choose one of the options')
-		currentAmount(savings, checking)
+	else:
+	     print('Please choose one of the options')  # This needs to be fixed
+	     currentAmount(savings, checking)
 
 def transfer(savings, checking, account):
 	user = float(input('How much money would you like to tranfer: '))
