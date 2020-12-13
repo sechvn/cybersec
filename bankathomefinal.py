@@ -16,12 +16,16 @@ def currentAmount(savings, checking):
 	elif user == 'withdraw':
 		withdrawMoney(savings, checking, account)
 
-	else:
-	     print('Please choose one of the options')  # This needs to be fixed
-	     currentAmount(savings, checking)
+	else:		
+		print('Please choose one of the options')
+		currentAmount(savings, checking)
 
 def transfer(savings, checking, account):
 	user = float(input('How much money would you like to tranfer: '))
+	while user - savings or user - checking < 0:
+		print('Insufficient funds, please transfer available amount')
+		currentAmount(savings, checking)
+
 	if account == 'savings':
 		checking -= user
 		savings += user
@@ -41,17 +45,23 @@ def depositMoney(savings, checking, account):
 		currentAmount(savings, checking)
 
 def withdrawMoney(savings, checking, account):
-	user = float(input('How much money do you wish to withdraw: '))
+	user = float(input('How much money would you like to withdraw: '))
+	while user - savings or user - checking < 0:
+		print('Insufficient funds, please withdraw available amount')
+		currentAmount(savings, checking)
+
 	if account == 'savings':
 		savings -= user
 		currentAmount(savings, checking)
 	elif account == 'checking':
 		checking -= user
 		currentAmount(savings, checking)
+		
+		
 
 
 currentAmount(savings, checking)
-
+		
 
 
 
