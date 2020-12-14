@@ -27,7 +27,7 @@ print(readFile,'Your average for pinewood file with lowest time dropped is: \n',
 # a bytecode error which I fixed by just using 'w'. Then I had to remember to open the file back and read from it
 # so that I could use the print function to display the contents of the file and then call the function to drop lowest value
 # and average. This program is mostly mine and I figured it out on my own using the book and above site, then using function
-# from first Chap 6 project. Can't believe I did it and got it to work.
+# from first Chap 6 project. 
 
 
 
