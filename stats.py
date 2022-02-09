@@ -20,19 +20,16 @@ def get_scores():
     
     '''
     nums = []
-    
+             
     while True:
-        for i in nums:
-            
-            if i < 0:
-                
-                raise ValueError
-        
+        for i in nums:            
+            if i < 0:                
+                raise ValueError        
         num = input("Enter a number (<return> to Quit): ")
         if num == "": break
-        nums.append(eval(num))
-        
+        nums.append(eval(num))        
     return nums
+
 
 def min_value(nums):
     ''' find the minimum
@@ -41,13 +38,16 @@ def min_value(nums):
     post: returns smallest number in nums
     
     '''
-    
+
+    if len(nums) < 1:
+        return None
+    else:
         
-    min = nums[-1]
-    for num in nums:
-        if num < min:
-            min = num
-    return min
+        min = nums[-1]
+        for num in nums:               
+            if num < min:
+                min = num                   
+        return min
 
 
 def max_value(nums):
@@ -57,13 +57,16 @@ def max_value(nums):
     post: returns largest number in nums
     
     '''
-   
-    
-    max = nums[-1]
-    for num in nums:
-        if num > max:
-            max = num
-    return max
+
+    if len(nums) < 1:
+        return None
+    else:
+        
+        max = nums[-1]
+        for num in nums:
+            if num > max:
+                max = num
+        return max
 
 def average(nums):
     ''' calculate the mean
@@ -72,15 +75,18 @@ def average(nums):
     post: returns the mean (a float) of the values in nums
     
     '''
-    
-    
-    count = 0    
-    length = 0    
-    for i in nums:        
-        for x in nums:            
-            count += i            
-            length += 1            
-    return count / length
+
+    if len(nums) < 1:
+        return None
+    else:
+        
+        count = 0    
+        length = 0    
+        for i in nums:        
+            for x in nums:            
+                count += i            
+                length += 1            
+        return count / length
         
 
 def std_deviation(nums):
@@ -90,13 +96,15 @@ def std_deviation(nums):
     post: returns the standard deviation (a float) of the values in nums
           
     '''
-   
-        
-    x = average(nums)    
-    total = 0.0    
-    for num in nums:        
-        total += (x - num) ** 2            
-    return math.sqrt(total / (len(nums) - 1))   #Used the book for this, tried to use list comprehension variation I found, but the book was much simpler and cleaner.
+    if len(nums) < 1:
+        return None
+    else:
+                
+        x = average(nums)    
+        total = 0.0    
+        for num in nums:        
+            total += (x - num) ** 2            
+        return math.sqrt(total / (len(nums) - 1))   #Used the book for this, tried to use list comprehension variation I found, but the book was much simpler and cleaner.
     
 
 def distribution(nums):
@@ -104,30 +112,32 @@ def distribution(nums):
         post: Determines how many integer values are within exam or grade ranges (eg. 60-69,70-79,ect.)
         then prints how many integer values of each fall within the grade ranges.
     '''
-   
+    if len(nums) < 1:
+        return None
+    else:
     
-    range1 = 0
-    range2 = 0
-    range3 = 0
-    range4 = 0
-    range5 = 0
-    range6 = 0
+        range1 = 0
+        range2 = 0
+        range3 = 0
+        range4 = 0
+        range5 = 0
+        range6 = 0
     
-    for num in nums:
-        if num > 99:
-            range1 += 1
-        if num > 89 and num < 100:
-            range2 += 1
-        if num > 79 and num < 90:
-            range3 += 1
-        if num > 69 and num < 80:
-            range4 += 1
-        if num > 59 and num < 70:
-            range5 += 1
-        if num <= 59:
-            range6 += 1
+        for num in nums:
+            if num > 99:
+                range1 += 1
+            if num > 89 and num < 100:
+                range2 += 1
+            if num > 79 and num < 90:
+                range3 += 1
+            if num > 69 and num < 80:
+                range4 += 1
+            if num > 59 and num < 70:
+                range5 += 1
+            if num <= 59:
+                range6 += 1
             
-    return(range1, range2, range3, range4, range5, range6)
+        return(range1, range2, range3, range4, range5, range6)
     
 
 def main():
