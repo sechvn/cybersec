@@ -21,16 +21,18 @@ def get_scores():
     '''
     nums = []
     
-    for i in nums:
-        if i < 0:
-            raise ValueError
-       
     while True:
+        for i in nums:
+            
+            if i < 0:
+                
+                raise ValueError
+        
         num = input("Enter a number (<return> to Quit): ")
         if num == "": break
         nums.append(eval(num))
+        
     return nums
-
 
 def min_value(nums):
     ''' find the minimum
@@ -39,9 +41,7 @@ def min_value(nums):
     post: returns smallest number in nums
     
     '''
-    for i in nums:
-        if i < 0:
-            raise ValueError
+    
         
     min = nums[-1]
     for num in nums:
@@ -57,9 +57,7 @@ def max_value(nums):
     post: returns largest number in nums
     
     '''
-    for i in nums:
-        if i < 0:
-            raise ValueError
+   
     
     max = nums[-1]
     for num in nums:
@@ -74,9 +72,7 @@ def average(nums):
     post: returns the mean (a float) of the values in nums
     
     '''
-    for i in nums:
-        if i < 0:
-            raise ValueError
+    
     
     count = 0    
     length = 0    
@@ -94,9 +90,7 @@ def std_deviation(nums):
     post: returns the standard deviation (a float) of the values in nums
           
     '''
-    for i in nums:
-        if i < 0:
-            raise ValueError
+   
         
     x = average(nums)    
     total = 0.0    
@@ -110,9 +104,7 @@ def distribution(nums):
         post: Determines how many integer values are within exam or grade ranges (eg. 60-69,70-79,ect.)
         then prints how many integer values of each fall within the grade ranges.
     '''
-    for i in nums:
-        if i < 0:
-            raise ValueError
+   
     
     range1 = 0
     range2 = 0
