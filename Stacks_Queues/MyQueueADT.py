@@ -24,7 +24,8 @@ class Queue():
         post: item is added to the queue'''
         if self.tail is None:  # If the queue is empty, set both the head and tail to the first node.
             self.head = ListNode(item)
-            self.tail = self.head  # Set tail to also first node object or item in the queue
+            self.tail = self.head
+            self._size += 1# Set tail to also first node object or item in the queue
         else:
             # Enforce concept of queue and add new node to end of linked list or queue
             self.tail.link = ListNode(item)
