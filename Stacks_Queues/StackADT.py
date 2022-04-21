@@ -15,7 +15,7 @@ class Stack():
     def __init__(self):
         '''creates an empty LIFO stack'''
         self.head = None
-        self.size = 0
+        self._size = 0
 
     def push(self, item):
         '''pre: none
@@ -54,6 +54,6 @@ class Stack():
     def size(self):
         '''pre: none
         post: returns the number of elements in the stack'''
-        return self.size  # Return the size of the stack
+        return self._size  # Return the size of the stack
 
 #Sources: Please see on bottom of MyQueueADT.py
